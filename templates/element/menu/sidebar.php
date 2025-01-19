@@ -35,6 +35,11 @@ $a_name = $this->request->getParam('action');
                 <li class="menu-item <?= $c_name == 'Users' && $a_name == 'profile' ? 'active' : '' ?>">
                     <?= $this->Html->link(__('<i class="menu-icon fa-solid fa-user-tie"></i> Profile'), ['controller' => 'Users', 'action' => 'profile', 'prefix' => false, $this->Identity->get('slug')], ['class' => 'menu-link', 'escape' => false]) ?>
                 </li>
+
+                <li class="menu-item <?= $c_name == 'Complaint' && $a_name == 'index' ? 'active' : '' ?>">
+                    <?= $this->Html->link(__('<i class="menu-icon fa-solid fa-user-tie"></i> Complaint'), ['controller' => 'Complaint', 'action' => 'profile', 'prefix' => false], ['class' => 'menu-link', 'escape' => false]) ?>
+                </li>
+
                 <?php if ($this->Identity->isLoggedIn() && $this->Identity->get('user_group_id') == '1') { ?>
                     <!-- Administrator -->
                     <li class="menu-header fw-bold text-uppercase mt-4 mb-3">
